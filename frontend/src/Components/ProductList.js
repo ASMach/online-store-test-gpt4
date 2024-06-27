@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Product from "./Product";
 import axios from "axios";
 
-function ProductList() {
+function ProductList({ products, onAddToCart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,11 +17,7 @@ function ProductList() {
   return (
     <div>
       {products.map((product) => (
-        <div key={product.id}>
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <p>${product.price}</p>
-        </div>
+        <Product key={product.id} product={product} onAddToCart={onAddToCart} />
       ))}
     </div>
   );
