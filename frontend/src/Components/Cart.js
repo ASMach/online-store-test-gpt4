@@ -28,3 +28,5 @@ function Cart({ cartItems, onRemoveFromCart, onCheckout }) {
     </div>
   );
 }
+
+export default Cart;

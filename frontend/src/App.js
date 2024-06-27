@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Product from "./Product";
-import Cart from "./Cart";
+import Product from "./Components/Product";
+import Cart from "./Components/Cart";
 
 function App() {
   const [products] = useState([
