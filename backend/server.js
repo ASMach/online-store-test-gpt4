@@ -27,6 +27,19 @@ app.get("/", (req, res) => {
   res.send("Hello from the backend!");
 });
 
+app.get("/products", (req, res) => {
+  db.query("SELECT * FROM products", (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+app.post("/cart", (req, res) => {
+  const { productId, quantity } = req.body;
+  // This should interact with a session or a more complex database logic
+  res.json({ message: "Product added to cart", productId, quantity });
+});
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
